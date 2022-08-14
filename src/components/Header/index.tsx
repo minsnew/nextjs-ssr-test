@@ -2,16 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
-        borderBottom: "1px solid gray",
-        marginBottom: "8px",
-        padding: "12px",
-      }}
-    >
+    <div className="flex flex-col mb-2 p-3 font-bold border-b border-blue-500">
       <Link href={{ pathname: "/" }}>
         <a>Main 가기</a>
       </Link>
