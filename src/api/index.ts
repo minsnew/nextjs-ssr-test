@@ -10,3 +10,7 @@ const getApiUrl = (path: string) => {
 export const getUsers = async () => {
   return await ky.get(`${getApiUrl("/users")}`).json<User[]>();
 };
+
+export const getUser = async (id: number) => {
+  return await ky.get(`${getApiUrl(`/users/${id}`)}`).json<User>();
+};
