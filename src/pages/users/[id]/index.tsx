@@ -6,7 +6,7 @@ import ContentContainer from "../../../containers/ContentContainer";
 import PageContainer from "../../../containers/PageContainer";
 import { User } from "../../../types/User";
 
-const BoardDetail = ({
+const UserDetail = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const user: User = data.user;
@@ -16,6 +16,7 @@ const BoardDetail = ({
       <Menu />
       <ContentContainer>
         <ContentTitle>User Detail</ContentTitle>
+        <div></div>
         <div>Usear Detail: {user.name}</div>
       </ContentContainer>
     </PageContainer>
@@ -31,4 +32,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: { data: { user: response } } };
 };
 
-export default BoardDetail;
+export default UserDetail;

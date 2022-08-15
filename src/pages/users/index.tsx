@@ -7,14 +7,14 @@ import ContentContainer from "../../containers/ContentContainer";
 import PageContainer from "../../containers/PageContainer";
 import { User } from "../../types/User";
 
-const BoardsPage = ({
+const UsersPage = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const router = useRouter();
   const users: User[] = data.users;
 
   const handleClick = (id: number) => {
-    router.push({ pathname: "/boards/[id]", query: { id } });
+    router.push({ pathname: "/users/[id]", query: { id } });
   };
 
   return (
@@ -46,10 +46,10 @@ const BoardsPage = ({
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const response = await getUsers();
 
   return { props: { data: { users: response } } };
 };
 
-export default BoardsPage;
+export default UsersPage;

@@ -4,18 +4,18 @@ import Menu from "../../../components/Menu";
 import ContentContainer from "../../../containers/ContentContainer";
 import PageContainer from "../../../containers/PageContainer";
 
-const GuideDetail = () => {
+const PostDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   return (
     <PageContainer>
       <Menu />
       <ContentContainer>
-        <ContentTitle>Guide Detail</ContentTitle>
-        <div>Guide : {id}</div>
+        <ContentTitle>Post Detail</ContentTitle>
+        <div>Post : {id}</div>
       </ContentContainer>
     </PageContainer>
   );
 };
 
-export default GuideDetail;
+export default PostDetail;
