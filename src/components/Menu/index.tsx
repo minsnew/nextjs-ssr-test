@@ -1,23 +1,21 @@
-import Link from "next/link";
+import MenuItem from "../MenuItem";
 
 const Menu = () => {
   return (
     <div className="w-72 h-screen flex flex-col p-4 bg-gray-700 text-white">
-      <div className="mb-6 text-3xl">
-        <Link href={{ pathname: "/" }}>Next SSR Sample</Link>
-      </div>
-      <Link href={{ pathname: "/boards" }}>
-        <a>Board 가기</a>
-      </Link>
-      <Link href={{ pathname: "/boards/[id]", query: { id: 3 } }}>
-        <a>Board 상세 1</a>
-      </Link>
-      <Link href={{ pathname: "/guides" }}>
-        <a>Guide 가기</a>
-      </Link>
-      <Link href={{ pathname: "/guides/[id]", query: { id: 4 } }}>
-        <a>Guide 상세 1</a>
-      </Link>
+      <MenuItem name="Next SSR Sample" pathname="/" className="mb-6 text-3xl" />
+      <MenuItem name="User List" pathname="/boards" />
+      <MenuItem
+        name="User Detail #1"
+        pathname="/boards/[id]"
+        query={{ id: 1 }}
+      />
+      <MenuItem name="Guide List" pathname="/guides" />
+      <MenuItem
+        name="Guide Detail #1"
+        pathname="/guides/[id]"
+        query={{ id: 1 }}
+      />
     </div>
   );
 };
