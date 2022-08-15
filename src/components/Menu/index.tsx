@@ -2,7 +2,7 @@ import MenuItem from "../MenuItem";
 
 const Menu = () => {
   return (
-    <div className="w-72 h-screen flex flex-col p-4 bg-gray-700 text-white">
+    <div className="w-72 h-full flex flex-col p-4 bg-gray-700 text-white">
       <MenuItem name="Next SSR Sample" pathname="/" className="mb-6 text-3xl" />
       <MenuItem name="User List" pathname="/boards" />
       <MenuItem

@@ -1,6 +1,8 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { getUser } from "../../../api";
+import ContentTitle from "../../../components/ContentTitle";
 import Menu from "../../../components/Menu";
+import ContentContainer from "../../../containers/ContentContainer";
 import PageContainer from "../../../containers/PageContainer";
 import { User } from "../../../types/User";
 
@@ -12,8 +14,10 @@ const BoardDetail = ({
   return (
     <PageContainer>
       <Menu />
-      <div className="font-bold text-3xl">User Detail</div>
-      <div>Usear Detail: {user.name}</div>
+      <ContentContainer>
+        <ContentTitle>User Detail</ContentTitle>
+        <div>Usear Detail: {user.name}</div>
+      </ContentContainer>
     </PageContainer>
   );
 };
