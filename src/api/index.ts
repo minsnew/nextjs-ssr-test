@@ -19,3 +19,9 @@ export const getUser = async (id: number) => {
 export const getPosts = async () => {
   return await ky.get(`${getApiUrl("/posts")}`).json<Post[]>();
 };
+
+export const getAlbums = async (userId: number) => {
+  return await ky
+    .get(`${getApiUrl(`/albums?userId=${userId}`)}`)
+    .json<Post[]>();
+};
