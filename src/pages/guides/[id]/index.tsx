@@ -1,14 +1,20 @@
 import { useRouter } from "next/router";
-import Header from "../../../components/Header";
+import ContentTitle from "../../../components/ContentTitle";
+import Menu from "../../../components/Menu";
+import ContentContainer from "../../../containers/ContentContainer";
+import PageContainer from "../../../containers/PageContainer";
 
 const GuideDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <div className="p-3">
-      <Header />
-      <div>Guide : {id}</div>
-    </div>
+    <PageContainer>
+      <Menu />
+      <ContentContainer>
+        <ContentTitle>Guide Detail</ContentTitle>
+        <div>Guide : {id}</div>
+      </ContentContainer>
+    </PageContainer>
   );
 };
 

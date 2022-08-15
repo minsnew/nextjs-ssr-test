@@ -1,20 +1,34 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import Header from "../../../components/Header";
+import { getUser } from "../../../api";
+import ContentTitle from "../../../components/ContentTitle";
+import Menu from "../../../components/Menu";
+import ContentContainer from "../../../containers/ContentContainer";
+import PageContainer from "../../../containers/PageContainer";
+import { User } from "../../../types/User";
 
 const BoardDetail = ({
-  query,
+  data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  const { id } = query;
+  const user: User = data.user;
+
   return (
-    <div className="p-3">
-      <Header />
-      <div>Board Detail: {id}</div>
-    </div>
+    <PageContainer>
+      <Menu />
+      <ContentContainer>
+        <ContentTitle>User Detail</ContentTitle>
+        <div>Usear Detail: {user.name}</div>
+      </ContentContainer>
+    </PageContainer>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  return { props: { query: context.query } };
+  const { id } = context.query;
+  if (!id || typeof id !== "string") return { props: { data: { user: null } } };
+
+  const response = await getUser(Number(id));
+
+  return { props: { data: { user: response } } };
 };
 
 export default BoardDetail;
