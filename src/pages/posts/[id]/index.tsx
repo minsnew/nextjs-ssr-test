@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import BackButton from "../../../components/BackButton";
 import ContentTitle from "../../../components/ContentTitle";
 import Menu from "../../../components/Menu";
 import ContentContainer from "../../../containers/ContentContainer";
@@ -11,7 +12,10 @@ const PostDetail = () => {
     <PageContainer>
       <Menu />
       <ContentContainer>
-        <ContentTitle>Post Detail</ContentTitle>
+        <ContentTitle>
+          <BackButton url="/posts" />
+          Post Detail
+        </ContentTitle>
         <div>Post : {id}</div>
       </ContentContainer>
     </PageContainer>
