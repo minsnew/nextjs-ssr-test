@@ -1,14 +1,15 @@
 import { useRouter } from "next/router";
-import Header from "../../../components/Header";
+import Menu from "../../../components/Menu";
+import PageContainer from "../../../containers/PageContainer";
 
 const GuideDetail = () => {
   const router = useRouter();
   const { id } = router.query;
   return (
-    <div className="p-3">
-      <Header />
+    <PageContainer>
+      <Menu />
       <div>Guide : {id}</div>
-    </div>
+    </PageContainer>
   );
 };
 

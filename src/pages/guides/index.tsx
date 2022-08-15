@@ -1,11 +1,12 @@
-import Header from "../../components/Header";
+import Menu from "../../components/Menu";
+import PageContainer from "../../containers/PageContainer";
 
 const GuidesPage = () => {
   return (
-    <div className="p-3">
-      <Header />
-      <div>Guides Page</div>
-    </div>
+    <PageContainer>
+      <Menu />
+      <div className="p-4">Guides Page</div>
+    </PageContainer>
   );
 };
 

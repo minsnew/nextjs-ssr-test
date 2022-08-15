@@ -1,7 +1,8 @@
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import { useRouter } from "next/router";
 import { getUsers } from "../../api";
-import Header from "../../components/Header";
+import Menu from "../../components/Menu";
+import PageContainer from "../../containers/PageContainer";
 import { User } from "../../types/User";
 
 const BoardsPage = ({
@@ -15,8 +16,8 @@ const BoardsPage = ({
   };
 
   return (
-    <div className="p-3">
-      <Header />
+    <PageContainer>
+      <Menu />
       <div className="font-bold font-4xl mb-3">User List</div>
       <div className="space-y-4">
         {users.map((it) => (
@@ -37,13 +38,12 @@ const BoardsPage = ({
           </div>
         ))}
       </div>
-    </div>
+    </PageContainer>
   );
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const response = await getUsers();
-  console.log("TEST", response);
 
   return { props: { data: { users: response } } };
 };

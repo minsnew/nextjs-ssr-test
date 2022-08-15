@@ -1,12 +1,13 @@
 import type { NextPage } from "next";
-import Header from "../components/Header";
+import Menu from "../components/Menu";
+import PageContainer from "../containers/PageContainer";
 
 const Home: NextPage = () => {
   return (
-    <div className="p-4">
-      <Header />
-      <div>Main</div>
-    </div>
+    <PageContainer>
+      <Menu />
+      <div className="p-3">Main</div>
+    </PageContainer>
   );
 };
 
