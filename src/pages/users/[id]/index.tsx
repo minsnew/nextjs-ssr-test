@@ -12,7 +12,6 @@ const UserDetail = ({
   data,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   const user: User = data.user;
-  test;
 
   return (
     <PageContainer>
