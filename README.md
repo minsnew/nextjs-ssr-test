@@ -1,34 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Server side rendering sample project
+
+## Description
+
+Next.js에서 SSR과 SSG를 사용하기 위한 스터디를 위해 샘플 프로젝트를 진행합니다.
+
+이 프로젝트는 크게 2가지 페이지를 가지고 있고, 각 페이지는 다른 랜더링 방식으로 구현합니다.
+
+1. users
+
+- users 페이지는 SSR 방식으로 구현 진행합니다.
+- ServerSideProps를 사용하여 컴퍼넌트에 표시되는 데이터를 가져와 전달합니다.
+- users의 root depth는 list가 표시되고, user 선택 시 dynamic path로 사용자 페이지가 생성됩니다.
+
+2. posts
+
+- posts 페이지는 SSG 방식으로 구현 진행합니다.
+- StaticProps를 사용하여 컴퍼넌트에 표시되는 데이터를 가져와 전달합니다.
+- posts에서도 root depth는 list가 표시되고, post 선택 시 선택된 post의 동적 페이지가 생성됩니다.
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
-```bash
-npm run dev
-# or
+```
 yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+이 프로젝트는 Vercel을 사용하여 배포하고 있고 아래 URL을 통해 배포된 페이지를 확인할 수 있습니다.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+nextjs-ssr-test-eight.vercel.app
